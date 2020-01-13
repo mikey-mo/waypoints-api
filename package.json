@@ -7,11 +7,6 @@
     "run": "node start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -23,8 +18,8 @@
     "the-framework": "^1.0.11"
   },
   "devDependencies": {
-    "husky": "^4.0.7",
-    "prettier": "^1.19.1",
-    "pretty-quick": "^2.0.1"
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0"
   }
 }
