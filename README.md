@@ -10,7 +10,7 @@ backend for the baton front end.  the api will act as a layer to communicate to 
 - create env variables `LOCAL_DB_USERNAME`, `LOCAL_DB_PASSWORD`, and `DEFAULT_DB_NAME` (`.env` support is initially available outside of `PRODUCTION`)
 - run `knex migrate:latest` to run database migrations
 - run `knex seed:run` to execute seed files (if exist)
-- run `npm start` to run service on default port `8080`
+- run `npm run dev` to run service on default port `8080` in the `DEVELOPMENT` environment
 - ping `localhost:8080` to check if service is running / receive a list of routes and their descriptions
 
 # framework
