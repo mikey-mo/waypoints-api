@@ -4,7 +4,6 @@ const DEFAULT_NOT_FOUND_MESSAGE = "Entity not found";
 let connection = {};
 
 if (process.env.LOCAL_DB_USERNAME !== undefined) {
-  // Running locally
   connection.host = "localhost";
   connection.user = process.env.LOCAL_DB_USERNAME;
   connection.password = process.env.LOCAL_DB_PASSWORD;
@@ -32,7 +31,7 @@ if (process.env.LOCAL_DB_USERNAME !== undefined) {
 
 const knex = require("knex")({
   client: "pg",
-  connection: connection,
+  connection: connection
 });
 
 module.exports = {
@@ -53,5 +52,5 @@ module.exports = {
       .catch(err => {
         throw Error(DEFAULT_NOT_FOUND_MESSAGE);
       });
-  },
+  }
 };

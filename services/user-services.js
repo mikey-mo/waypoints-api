@@ -36,7 +36,6 @@ module.exports = {
       "Invalid email address"
     );
 
-    // Check password
     if (!this.checkPassword(password, user.password)) {
       throw "Invalid password";
     }
