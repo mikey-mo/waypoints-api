@@ -1,70 +1,65 @@
-const theFramework = require("the-framework");
-const userServices = require("../../services/user-services");
+const theFramework = require('the-framework');
+const userServices = require('../../services/user-services');
 
 theFramework.post(
-  "/user/login",
+  '/user/login',
   [
     {
-      id: "password",
+      id: 'password',
       type: theFramework.STRING,
       required: true,
-      description: "User password"
+      description: 'User password',
     },
     {
-      id: "email",
+      id: 'email',
       type: theFramework.STRING,
       required: true,
-      description: "User email"
-    }
+      description: 'User email',
+    },
   ],
   {
-    description: "Logs in a user",
-    authRequired: false
+    description: 'Logs in a user',
+    authRequired: false,
   },
-  async params => {
-    console.log(params);
-    return userServices.login(params.email, params.password);
-  }
+  async (params) => userServices.login(params.email, params.password),
 );
 
 theFramework.post(
-  "/user/register",
+  '/user/register',
   [
     {
-      id: "first_name",
+      id: 'first_name',
       type: theFramework.STRING,
       required: true,
-      description: "First name"
+      description: 'First name',
     },
     {
-      id: "last_name",
+      id: 'last_name',
       type: theFramework.STRING,
       required: true,
-      description: "Last name"
+      description: 'Last name',
     },
     {
-      id: "email",
+      id: 'email',
       type: theFramework.STRING,
       required: true,
-      description: "Email"
+      description: 'Email',
     },
     {
-      id: "password",
+      id: 'password',
       type: theFramework.STRING,
       required: true,
-      description: "Password"
-    }
+      description: 'Password',
+    },
   ],
   {
-    description: "Registers a user",
-    authRequired: false
+    description: 'Registers a user',
+    authRequired: false,
   },
-  async params => {
-    return userServices.register(
-      params.first_name,
-      params.last_name,
-      params.email,
-      params.password
-    );
-  }
+  async (params) => userServices.register(
+    params.first_name,
+    params.last_name,
+    params.email,
+    params.password,
+  ),
 );
