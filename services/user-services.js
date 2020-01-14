@@ -64,22 +64,12 @@ module.exports = {
     return cleanUser;
   },
   createJwt(user) {
-    const newUser = { ...user, service_identifier: process.env.JWT_SERVICE_IDENTIFIER };
-    return jwt.sign(newUser, process.env.JWT_SECRET);
+    return jwt.sign(user, process.env.JWT_SECRET);
   },
   verifyJwt(token) {
-    console.log(token);
     try {
-      const userToken = jwt.verify(token, process.env.JWT_SECRET);
-      console.log(userToken);
-      if (
-        !userToken.service_identifier
-        || userToken.service_identifier !== process.env.JWT_SERVICE_IDENTIFIER
-      ) {
-        return null;
-      }
-
-      return userToken;
+      const user = jwt.verify(token, process.env.JWT_SECRET);
+      return this.cleanUser(user);
     } catch (e) {
       return null;
     }

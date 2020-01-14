@@ -1,6 +1,16 @@
 const theFramework = require('the-framework');
 const userServices = require('../../services/user-services');
 
+theFramework.get(
+  '/user',
+  [],
+  {
+    description: 'Gets user info by token',
+    authRequired: true,
+  },
+  async (params, user) => user,
+);
+
 theFramework.post(
   '/user/login',
   [
