@@ -1,6 +1,6 @@
-# baton api
+# waypoints api
 
-backend for the baton front end.  the api will act as a layer to communicate to various clients and services associated with the app
+backend for the waypoints front end.  the api will act as a layer to communicate to various clients and services associated with the app
 
 # api setup
 
@@ -15,4 +15,4 @@ backend for the baton front end.  the api will act as a layer to communicate to 
 
 # framework
 
-the baton api is built off of `the-framework`; any clarification on its use can be found: https://www.npmjs.com/package/the-framework
+the waypoints api is built off of `the-framework`; any clarification on its use can be found: https://www.npmjs.com/package/the-framework
